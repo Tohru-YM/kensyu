@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+ <html lang="ja">
+  <head>
+    <meta charset="utf8">
+     <title>『皇国の守護者』感想コメント</title>
+      <link rel="stylesheet"href=back.css>
+      <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  </head>
+  <body>
+  	<script>	
+		function sendButtonClick(){
+		//	var x=document.getElementById("selection").value;
+		var x=$(".yamada").val();	
+			/*if(x=="新城直衛"){
+				alert("Yes");	
+			}else if(x=="千早"){
+				alert("YesYes");
+			}else{
+				alert("No");
+			
+			}*/
+			switch(x){
+				case "新城直衛":
+					console.log("Yes");
+					break;
+				case "千早":
+					console.log("YesYes");
+					break;
+				default:
+					console.log("No");
+
+
+			}
+			//alert(x);
+			/*iiiiiいいいいいいいい
+			uuuuuuuううううううう
+			eeeeeeええええええええええええ
+			*/
+			return false;
+		}
+  	</script>
+<form action="surver"  method="post">
+	<p>
+		感想コメント:
+			<textarea id="comment" name="comment" class="yamada" cols="40" rows="5"　placeholder="コメントを選択してください">コメント</textarea>
+	</p>
+	<p>
+		好きな登場人物を選んでください:
+		   <select name="登場人物" id="selection">
+   			<option value="新城直衛">新城直衛</option>
+			<option value="千早">千早</option>
+			<option value="猪口曹長">猪口曹長</option>
+			<option value="西田少尉"selected>西田少尉</option>
+			<option value="漆原少尉">漆原少尉</option>
+			<option value="ユーリア・ド・ヴェルナ・ツァリツィア・ロッシナ">ユーリア・ド・ヴェルナ・ツァリツィア・ロッシナ</option>
+		   </select>
+	</p>
+	<p>
+		<button onClick=" return sendButtonClick()">ボタン</button>
+		<input type="button" value="テスト"/>
+		<input type="submit" id="surver" name="submit" value="送信"/>
+	</p>
+</form>
+<p>
+  <a href="index.html">目次に戻る</a>
+<p>
+  </body>
+</html>  

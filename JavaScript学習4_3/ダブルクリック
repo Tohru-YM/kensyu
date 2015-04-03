@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+			<title>onclick のテスト</title>
+		<script>
+			function wclick(){
+	     			alert("ダブルクリックされました。");
+	     		}
+	   			window.ondblclick = wclick;     
+		</script>
+	</head>
+
+	<body>
+
+		<p>このページ上でマウスボタンをクリックしてみてください。</p>
+
+	</body>
+</html>

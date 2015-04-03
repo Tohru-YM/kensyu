@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+	    <meta charset="utf8">
+	     <title>JavaScript学習4_3_01</title>
+	     	<script>
+	     		function click(){
+	     			alert("クリックされました。");
+	     		}
+	   			window.onclick = click;
+	   			function wclick(){
+	     			alert("ダブルクリックされました。");
+	     		}
+	   			window.ondblclick = wclick;
+	   			function clse(){
+	     			console.log(event.keyCode);
+	     			if(event.shiftKey==true,
+	     				event.keyCode==65)
+	     			{
+	     			window.close();
+	     			}
+	     		}
+	   			window.onkeydown = clse;     		
+	     	</script>
+	</head>
+	<body>
+		<p id="clock"/>
+			<script>
+				function justtime(){	
+					var hiduke ;
+					hiduke= new Date();
+					var year = hiduke.getFullYear();
+					var month = hiduke.getMonth()+1;
+					var date = hiduke.getDate();
+					var day = hiduke.getDay();
+					var hours = hiduke.getHours();
+					var minutes = hiduke.getMinutes();
+					var seconds = hiduke.getSeconds();
+					var youbi = new Array(
+						"日","月","火","水","木","金","土"
+						);
+					var time = ("<b>西暦</b>"+year+"年"+month+"月"+date+"日"+youbi[day]+"曜日"+hours+"時"+minutes+"分"+seconds+"秒");
+					document.getElementById("clock").innerHTML
+					= time;
+					return time;
+				};
+				setInterval("justtime()",1000);		
+				console.log(justtime());
+			</script>
+	</body>
+</html>
