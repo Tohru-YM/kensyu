@@ -1,0 +1,134 @@
+/**{ color: blue;}
+li{ color: blue;}
+#danraku1{ color: red;}
+.kuni{ color: orange;}
+li, div{ color: blue;}
+div > span{ color: yellow;}
+p + p { color: red;}
+p.kuni { color: red;}
+td[title] { color: red;}
+a[href="http://www.amazon.co.jp/%E7%9A%87%E5%9B%BD%E3%81%AE%E5%AE%88%E8%AD%B7%E8%80%85%E3%80%881%E3%80%89%E5%8F%8D%E9%80%86%E3%81%AE%E6%88%A6%E5%A0%B4-C%E3%83%BBNOVELS%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%82%A2-%E4%BD%90%E8%97%A4-%E5%A4%A7%E8%BC%94/dp/4125005257/ref=pd_sim_b_8?ie=UTF8&refRID=0ZKEXJ116A2V63KW3HCH"]
+{background-color:red;}
+a[class~="search"]{background-color:red;}
+<!--緑にならなかった-->
+tbody tr:first-child;{background-color:green;}
+a:link{background-color:black;}
+a:visited{background-color:green;}
+a:hover{background-color:pink;}
+a:active{color:red;}
+textarea:focus{background:skyblue;}
+p:first-letter{background:skyblue;}
+p:before{
+	content:"-->";
+}
+p:after{
+	content:">--";
+}
+body { font-size: 20px; }
+li { font-size: 2em; }
+div span {font-size:20%; }
+li { color:rgb(20%,100%,80%);}
+body,html{height:100%;}
+div {
+	background:silver;
+	width:50%;
+	height:50%;
+}
+div{
+	border-color:orange;
+	border-width:50%;
+	border-style:dotted;
+	border-top-style:double ;
+}
+body{margin:0;}
+div{
+	background:silver;
+	padding: 90px 50px 50px 0px;
+}
+div#box1{
+	background:silver;
+	margin: 0px 20px 30px 40px;
+}
+div#box2{
+	background:skyblue;
+	margin: 0px 20px 30px 40px;
+}
+div {
+	color:red;
+	font-size:20px;
+	font-famili:Arial,Helvetica;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:line-through underline;
+}
+ul{
+	list-style:inside square;
+}
+<!--　アイコンの大きさ指定 -->
+ul{
+	list-style:url(hyoshi.jpg width:20);
+}
+#button{ cursor:help;}
+#test{ cursor:move;}
+#surver{ cursor:url("sinjo_1.jpg"),auto;}<!--　カーソルが変わらない -->
+body{
+	background-image:url('sinjo_1.jpg');<!--　背景が変わらない -->
+	background-repeat:repeat-y;
+}*/
+select{
+	width:100px;
+	cursor:move;
+}
+/*body {margin:0;}
+#box3{
+	background:red;
+	width:100px; 
+	height:50px;
+	position:static;
+	top:20px;
+	left:50px;
+}
+#box4{
+	background:skyblue;
+	width:80px; 
+	height:150px;
+	position:absolute;
+	top:10px;
+	left:30px;
+}
+#box5{
+	background:green;
+	width:10px; 
+	height:90px;
+	position:fixed;
+	top:100px;
+	left:90px;
+}
+body {margin:0;}
+#box3{
+	background:red;
+	width:100px; 
+	height:50px;
+	position:absolute;
+	z-index:2;
+	overflow:hidden;
+}
+#box4{
+	background:skyblue;
+	width:100px; 
+	height:50px;
+	position:absolute;
+	top:10px;
+	left:10px;
+	z-index:3;
+	overflow:scroll;
+}
+#box5{
+	background:green;
+	width:100px; 
+	height:50px;
+	position:absolute;
+	top:10px;
+	left:10px;
+	z-index:2;
+}<!--z-indexがうまくいかない-->*/
