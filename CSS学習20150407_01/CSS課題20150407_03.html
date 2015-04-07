@@ -7,15 +7,22 @@
 		<link rel="stylesheet" href=default3.css>
 		<script>
 			function m () {
-			var vanish = document.getElementById("none");
-			vanish.style.display = "none"
-			var moving = document.getElementById("moveue");
-			moving.style.display = "block"
-			moving.style.top = "150px"
-			//pの所に移動せず１番上にいってしまう
+				var vanish = document.getElementById("none");
+				//vanish.style.display = "none"
+				var moving = document.getElementById("moveue");
+				var x = 0;
+				var count = x++;
+					if(count % 2 == 1){
+						vanish.style.display = "none";
+					}
+					else{
+						document.write("<\/body>");
+					}
+
+				//moving.style.display = "block"
+				//moving.style.height = "150px"
+				//pの所に移動せず１番上にいってしまう
 			}
-
-
 
 		</script>
 	</head>
