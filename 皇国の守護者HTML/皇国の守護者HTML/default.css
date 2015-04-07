@@ -5,7 +5,7 @@ li{ color: blue;}
 li, div{ color: blue;}
 div > span{ color: yellow;}
 p + p { color: red;}
-p.kuni { color: red;}
+p.kuni { color: red;}*/
 td[title] { color: red;}
 a[href="http://www.amazon.co.jp/%E7%9A%87%E5%9B%BD%E3%81%AE%E5%AE%88%E8%AD%B7%E8%80%85%E3%80%881%E3%80%89%E5%8F%8D%E9%80%86%E3%81%AE%E6%88%A6%E5%A0%B4-C%E3%83%BBNOVELS%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%82%A2-%E4%BD%90%E8%97%A4-%E5%A4%A7%E8%BC%94/dp/4125005257/ref=pd_sim_b_8?ie=UTF8&refRID=0ZKEXJ116A2V63KW3HCH"]
 {background-color:red;}
@@ -18,7 +18,7 @@ a:hover{background-color:pink;}
 a:active{color:red;}
 textarea:focus{background:skyblue;}
 p:first-letter{background:skyblue;}
-p:before{
+/*p:before{
 	content:"-->";
 }
 p:after{
@@ -63,10 +63,10 @@ div {
 }
 ul{
 	list-style:inside square;
-}
+}*/
 <!--　アイコンの大きさ指定 -->
 ul{
-	list-style:url(hyoshi.jpg width:20);
+	list-style:url(hyoshi.jpg);
 }
 #button{ cursor:help;}
 #test{ cursor:move;}
@@ -74,7 +74,7 @@ ul{
 body{
 	background-image:url('sinjo_1.jpg');<!--　背景が変わらない -->
 	background-repeat:repeat-y;
-}*/
+}
 select{
 	width:100px;
 	cursor:move;

@@ -1,0 +1,21 @@
+body{background-color:green;
+	 font-size:12pt;
+	 color:black;
+}
+div{background-color:white;
+	background-position-height:100%;/*白が下まで伸びない*/
+	margin-top:0px;}/*h1のpaddingと違う*/
+h1{
+	border-style: solid;
+	border-color:black;
+	border-width:5px;
+	padding:5px 10px;
+	margin-top:30px;
+	margin-right:20px;
+	margin-left:20px;
+}
+p{ text-align: center; }
+ul{list-style-type:lower-roman;
+   list-style-position:inside;
+   text-align:center;
+}/*真ん中に文字を寄せられない*/
