@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "ja">
+	<head>
+		<meta charset = "utf8">
+		<title>jQuery練習3</title>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js">
+		</script>
+		<script>
+			$(function(){
+				/*var newli = $("<li>").text("ああああ");
+				//①$("ul > li:eq(1)").before(newli);
+				//②newli.insertBefore($("ul > li:eq(1)"));
+				//①②は同じ意味 newliをli(1)前に追加
+				//$("ul").prepend(newli);
+				//要素の子要素の先頭に追加⇔append
+				newli.appendTo($("ul"));
+				//上と同じ*/
+				//$("#box").hide(5000);
+				/*$("#box").fadeOut(5000);
+				$("#book").hide(5000);
+				$("#box").toggle(1000);
+				$("#box").toggle(1000);*/
+				//出ていたら消す、消えていたら表示
+				/*$("#box").fadeOut(1000, function() {
+					alert("aaaaaa")
+				});*/
+				/*var vanish =  document.getElementById("box");
+					if (vanish.style.display = "block") {
+						$("#box").fadeOut(1000);
+					}
+					else{
+						$("#box").fadeIn(1000);
+					}*/
+					//消えて、現れての動作ができない
+					//toggleの回数制限なし
+				/*$("#box").hide(1000, function iwgp () {
+					$("#box").toggle(1000);
+					setInterval(iwgp, 1000);
+				});*/
+				//↑toggleを繰り返す
+				$("p").click(function () {
+					alert("aaaaaaa");
+				});
+				$("p").mouseover(function () {
+					$(this).css("background", "green");
+				});
+				$("p").mouseout(function () {
+					$(this).css("background", "white");
+				});
+				$("p").mousemove(function (e) {
+					$(this).text(e.pageX);
+				});
+				//引数を入れる?
+			});
+		</script>
+	</head>
+	<body>
+		<p style="font-weight:bold">練習</p>
+		<ul>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<div id="box" style="width:100px; height:100px; background-color:red;"></div>
+		<!--<img src="dai1kan.jpg" id="book" width="100px"/>-->
+	</body>
+</html>

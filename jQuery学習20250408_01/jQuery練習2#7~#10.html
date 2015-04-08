@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "ja">
+	<head>
+		<meta charset = "utf8">
+		<title>jQuery練習2</title>
+		<style>
+			.mystyle {
+				border-style: solid;
+				border-width: 5px;
+				border-color: red; 
+				font-size: 50px; 
+			}
+		</style>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js">
+		</script>
+		<script>
+			$(function(){
+				//$("a[href=\"http://google.com\"]").hide("slow");
+				//$("a[href!=\"http://google.com\"]").hide("slow");//以外の物の選択
+				//$("a[href*=\"gle.com\"]").hide("slow");
+				//含む物の選択
+				$("a[href$=\"jp\"]").css("color", "red");
+				//終わる物の選択 ^=は始まる
+				console.log($("a[href=\"http://yahoo.co.jp\"]").css("color"));
+				//要素の取得(yahooの色を取得)
+				$("#rensyu").addClass(".mystyle");
+				//スタイルが変わらない
+				//反対にremoveClassもある
+				//console.log($("#google").attr("href"));
+				//属性が取得できない
+				$("#google").attr("href", "http://yahoo.co.jp");
+				//属性をかえる
+				console.log($("#amazon").data("sitename"));
+				//dataの取得
+				//$("#rensyu").text("ジェイクエリィ");
+				//中身の書き換え
+				$("#rensyu").html("<a href=\"http://www.dotinstall.com\">click</a>");
+				//http文の書き換え
+				console.log($("input").val());
+				//valueの表示
+				$("input").val("Hello World");
+				//valueの書き換え
+				//$("input").remove();
+				//valueの削除
+				//$("#push").empty();
+				//removeとempty違い
+
+			});
+		</script>
+	</head>
+	<body>
+		<p id="rensyu">jQuery練習</p>
+		<p>
+			<a href="http://google.com" id="google">
+				Google
+			</a>
+		</p>
+		<p><a href="http://yahoo.co.jp">Yahoo!</a></p>
+		<p>
+			<a href="http://www.amazon.co.jp" data-sitename="amazon" id="amazon">Amazon
+			</a>
+		<input type="text" id="push" value="Hello"/>
+		</p>
+	</body>
+</html>

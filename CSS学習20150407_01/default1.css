@@ -1,50 +1,64 @@
-html,body{background-color:white;
-		  text-align:center;
-		  font-size:12pt;
-		  color:black;
-		  margin: 0;  
-    	  padding: 0;  
-	      height: 100%; 
+html, body{ background-color: green;
+		    text-align: center;
+		    font-size: 12pt;
+		    color:black;
+		    margin: 0;  
+    	    padding: 0;  
+	        height: 100%; 
 }
 /*#sotowaku1{
 	width:20px;
 	float:left;
 	margin-bottom:0;
 	background-color:green;
-}*/
+}
 #sotowaku1 {  
 		    float:left;
 		    height: 100%;  
 		    width: 200px;
 		    background-color:green; 
-}  
+}*/ 
 
 /*#sotowaku2{
 	width:20px;
 	float:right;
 	margin-bottom:0 auto;
 	background-color:green;
-}*/
+}
 #sotowaku2 {  
 		    float:right;
 		    height: 100%;  
 		    width: 200px;
 		    background-color:green; 
-}  
+}*/  
 /*div{background-color:white;
 	background-position-height:100%;白が下まで伸びない
 	margin-top:0px;}h1のpaddingと違う*/
+#waku{
+	background-color: white;
+	width: 80%;
+	height: 100%;
+	margin-top: 0;
+	padding-top: 30px;
+	position: absolute;
+	left: 10%;
+	
 h1{
 	border-style: solid;
-	border-color:black;
-	border-width:5px;
-	padding:5px 10px;
-	margin-top:30px;
+	border-color: black;
+	margin-top: 0;
+	border-width: 5px;
+	padding: 5px 10px;
+	margin-right: 20px;
+	margin-left: 20px;
+	
+}/*margin-top:30px;
 	margin-right:220px;
-	margin-left:220px;
-}
+	margin-left:220px;*/
 p{ text-align: center; }
-ul{list-style-type:lower-roman;
-   list-style-position:inside;
-   text-align:center;
+
+ul{
+	list-style-type: lower-roman;
+    list-style-position: inside;
+    text-align: center;
 }/*真ん中に文字を寄せられない*/

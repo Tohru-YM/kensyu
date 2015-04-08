@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf8">
+	<title>jQuery練習4</title>
+</head>
+<body>
+	<p>jQuery練習4</p>
+	<form>
+		<input type="text" id="name"></input>
+		<select id="members" name="members">
+			<option>猿</option>
+			<option>雉</option>
+			<option>犬</option>
+		</select>
+		<div style="position: absolute; top: 100px;"><button>Add</button></div>
+	</form>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js">
+	</script>
+	<script>
+		$(function(){
+			$("#name")
+			.focus(function(){
+				$(this).css("background", "red")
+			})
+			.blur(function(){
+				$(this).css("background", "white")
+			});
+			$("#members").change(function(){
+				alert("changed")
+			});
+			$("button").click(function(){
+				var p = $("<p>").text("aaaaaaaa").addClass("addtext");
+				$(this).before(p);
+			});//<p>画表示されるのが押している間だけonメソッド未学習
+		});
+	</script>
+</body>
+</html>

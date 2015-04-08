@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "ja">
+	<head>
+		<meta charset = "utf8">
+		<title>jQuery練習1</title>
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js">
+		</script>
+		<script>
+			$(document).ready (function(){
+				/*$('p').css ('color', 'red'). hide( "slow");
+				$("#sub").css( "background-color", "blue");
+				$(".item").css( "color", "gold");
+				$("#main > .item").css( "color", "red");
+				$("p, .item").css( "color", "gold");
+				$("#main + .item").css( "color", "gold");
+				//+がうまく動かない
+				$("#sub > li:eq(2)").css("color", "gold");//フィルター
+				$("#sub > li:gt(2)").css("color", "gold");
+				//2より大きい
+				$("#sub > li:contains(4)").css("color", "gold");
+				//4が含まれる
+				$("#sub").children().css("color", "gold");
+				//子要素
+				$("#sub> li:eq(2)").next().css("color", "gold");*/
+				$("#sub> li:eq(2)").siblings().hide("slow");
+				//#subのliの2の兄弟要素の選択
+			});
+
+			/*$(function(){
+
+				$("p").css( "color", "red")
+			});*/
+		</script>
+	</head>
+	<body>
+		<ul id= "main">
+			<li>0</li>
+			<li class= "item">1</li>
+			<li>2</li>
+			<li>3
+				<ul id= "sub">
+					<li class= "item">3-0</li>
+					<li>3-1</li>
+					<li>3-2</li>
+					<li class= "item">3-3</li>
+					<li>3-4</li>
+				</ul>
+			</li>
+		</ul>
+		<p>jQuery練習</p>
+	</body>
+</html>

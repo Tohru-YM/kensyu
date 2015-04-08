@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf8">
+	<title>jQuery練習サンプル</title>
+</head>
+<body>
+	<p>jQueryサンプル</p>
+	<button>Add</button>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js">
+	</script>
+	<script>
+		$(function(){
+
+			$("button").click(function() {
+			var p = $("<p>").text("vanish!").addClass("vanish");
+				$(this).before(p);
+		});
+	</script>
+</body>
+</html>

@@ -6,17 +6,17 @@
 		
 		<link rel="stylesheet" href=default3.css>
 		<script>
+			var x = 0;
 			function m () {
 				var vanish = document.getElementById("none");
 				//vanish.style.display = "none"
 				var moving = document.getElementById("moveue");
-				var x = 0;
-				var count = x++;
+					var count = x++;
 					if(count % 2 == 1){
 						vanish.style.display = "none";
 					}
 					else{
-						document.write("<\/body>");
+						vanish.style.display = "block";
 					}
 
 				//moving.style.display = "block"
