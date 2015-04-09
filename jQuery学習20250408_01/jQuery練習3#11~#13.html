@@ -51,7 +51,21 @@
 					$(this).text(e.pageX);
 				});
 				//引数を入れる?
+				//$("#box").fadeOut(1000, function () {
+						//setTimeout(iwgp, 1000);
+						function iwgp () {
+							if ($("#box").css("display") == "none") {
+							$("#box").fadeIn(1000);
+							}
+							else {
+							$("#box").fadeOut(1000);
+							}
+							setTimeout(iwgp, 1000);
+						};	
+				//});
+							setTimeout(iwgp, 1000);
 			});
+
 		</script>
 	</head>
 	<body>

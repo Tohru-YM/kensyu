@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf8">
+		<title>CSS課題3</title>
+		
+		<link rel="stylesheet" href=default3.css>
+		<script>
+			var x = 0;
+			function m () {
+				var vanish = document.getElementById("none");
+				//vanish.style.display = "none"
+				var moving = document.getElementById("moveue");
+					var count = x++;
+					if(count % 2 == 1){
+						vanish.style.display = "none";
+					}
+					else{
+						vanish.style.display = "block";
+					}
+
+				//moving.style.display = "block"
+				//moving.style.height = "150px"
+				//pの所に移動せず１番上にいってしまう
+			}
+
+		</script>
+	</head>
+	<body>
+		<p id="none">ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+		<form>
+			<div id="moveue">
+				<button type="button"  onclick="m()">
+					上に移動
+				</button>
+			</div>	
+		</form>
+	</body>
+</html>

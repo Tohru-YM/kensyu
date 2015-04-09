@@ -32,7 +32,11 @@
 			$("button").click(function(){
 				var p = $("<p>").text("aaaaaaaa").addClass("addtext");
 				$(this).before(p);
+				return false;
 			});//<p>画表示されるのが押している間だけonメソッド未学習
+			$("body").on("click", ".addtext", function() {
+				$(this).remove();
+			});
 		});
 	</script>
 </body>

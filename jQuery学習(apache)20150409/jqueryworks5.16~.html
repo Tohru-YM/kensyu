@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf8">
+	<title>jQueryの練習5</title>
+</head>
+<body>
+	<p>jQueryの練習5</p>
+	<p>
+		<input type="text" name="name" id="name"/>
+		<input type="button" name="greet" id="greet" value="挨拶"/>
+	</p>
+	<button id="motto">もっと読む</button>
+	<div id="result"></div>
+	<div id="return"></div>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+		$(function(){
+			$("#motto").click(function() {
+				console.log("clicked");
+				$("#result").load("studyajax.html", function() {
+					$("#habcds").css("color", "red");
+				});
+			});
+			$("#greet").click(function() {
+				$.get("studyjax.txt",{
+					name: $("#name").val()
+				}, function(data) {
+					$("#return").html(data);
+
+				});
+			});
+			/*$("#greet").click(function() {
+				$.get("learnajax.php",{
+					name: $("#name").val()
+				}, function(data) {
+					$(#"return").html(data.message + "(" + data.length + ")");
+
+				});
+			});
+		});
+		$(function() {
+			$("#motto").click(function() {
+				alert("clicked!");
+			});*/
+		});
+	</script>
+</body>
+</html>
