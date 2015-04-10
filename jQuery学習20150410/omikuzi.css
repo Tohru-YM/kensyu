@@ -1,0 +1,21 @@
+#kekka{
+	font-size:20px; 
+	font-weight:bold;
+	color:white;
+}
+#kakushi{
+	float:right; 
+	width:50px;
+	height:50px;
+}
+#shikaku{
+	background:red; 
+	border:solid black; 
+	width:45px; 
+	height:25px; 
+	text-align:center; 
+	vertical-align:center; 
+	display:inline-block; 
+	padding-top:2.5px;
+
+}

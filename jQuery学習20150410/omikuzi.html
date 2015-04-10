@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>おみくじ(jQuery)</title>
+	<link rel="stylesheet" href=omikuzi.css>
+</head>
+<body>
+	<h1 style="background:blue; color:orange"}>おみくじ</h1>
+		<div style="text-align:center">
+			<input type="button" id="omikuzi" value="あなたの運勢は?"/>
+			<p>あなたの運勢は.....<span id="shikaku"><span id="kekka">&nbsp;</span></span></p>
+		</div>
+		<div id="kakushi"></div>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+		$(function() {
+			$("#omikuzi")
+			.click(function() {
+				var nakami = ["大吉","中吉","小吉","凶","大凶"];
+				var rannsuu = Math.floor(Math.random() * nakami.length);
+				var result = nakami[rannsuu];
+				//alert(nakami[result]);
+				$("#kekka").text(result);
+			})
+			.css({"cursor":"pointer"});
+			/*$("#shikaku")
+			.css({"background":"red", 
+				  "border":"solid black", 
+				  "width":"45px", 
+				  "height":"25px", 
+				  "text-align":"center", 
+				  "vertical-align":"center", 
+				  "display":"inline-block", 
+				  "padding-top":"2.5px"
+			});*/
+			$("#kakushi").click(function() {
+				$("#kekka").text("大吉");
+			});
+		});
+	</script>
+</body>
+</html>

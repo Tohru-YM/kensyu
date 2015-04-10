@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>スロット(jQuery)</title>
+	<link rel="stylesheet" href=slot.css>
+</head>
+<body>
+	<table border="2px" bordercolor="black" width="400px" align="center">
+	<thead>
+		<tr id="ue">
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="atari">
+			<td id="ichiban">?</td>
+			<td id="niban">?</td>
+			<td id="sanban">?</td>
+		</tr>
+		<tr class="atari">
+			<td><input type="button" id="hidari" value="止める"/></td>
+			<td><input type="button" id="chuo" value="止める"/></td>
+			<td><input type="button" id="migi" value="止める"/></td>
+		</tr>
+	</tbody>
+	</table>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script>
+		$(function() {
+			$("#ichiban, #niban, #sanban").text(function() {
+				function slot() {
+					$("#ichiban, #niban, #sanban").text(function() {
+						var timer = Math.floor(Math.random() * 10);
+						if($("#ichiban, #niban, #sanban").text() == "???"){	
+							return timer;	
+						}
+						else{
+							return timer;
+						}
+					});
+				}
+				console.log($("#ichiban, #niban, #sanban").text());
+
+			});
+		});
+	</script>
+				<!--var slot = $(this).text(rannsuu);-->
+</body>
+</html>
