@@ -27,17 +27,25 @@
 		</tr>
 	</tbody>
 	</table>
+	<p align="center">
+		<input type="button" id="start" value="もう１回"/>
+	</p>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
 		$(function() {
 			slot();
-				
+			$("#start").click(function() {
+			$("#ichiban, #niban, #sanban").attr("spin", "true");
+			slot();
+			});
+			
+		
 		});
 		function slot() {
 
 			var isSpin = false;
 			$("#ichiban, #niban, #sanban").each(function() {
-				var timer = Math.floor(Math.random() * 10);
+				var timer = Math.floor(Math.random() * 2);
 				if($(this).attr("spin") == "true"){	
 					$(this).text(timer);
 					isSpin = true;	
@@ -45,9 +53,37 @@
 				
 			});
 			if(isSpin){
-				setTimeout(slot,100);
+				setTimeout(slot,500);
 			} 
 		}	
+		$("#hidari").click(function() {
+			$("#ichiban").attr("spin", "false");
+			judge();
+		});
+		$("#chuo").click(function() {
+			$("#niban").attr("spin", "false");
+			judge();
+		});
+		$("#migi").click(function() {
+			$("#sanban").attr("spin", "false");
+			judge();
+		});
+		function judge() {
+			console.log($("#ichiban").attr("spin"));
+			console.log($("#niban").attr("spin"));
+			console.log($("#sanban").attr("spin"));
+			if (($("#ichiban").attr("spin") != "true") && ($("#niban").attr("spin") != "true") && ($("#sanban").attr("spin") != "true") == true){
+				if(($("#ichiban").text() == $("#niban").text())
+					&& ($("#sanban").text() == $("#ichiban").text()) ) {
+					alert("大当たり!!");
+				}
+				else{
+					alert("はずれ");
+				}
+			}
+		}
+		
+		
 	</script>
 				<!--var slot = $(this).text(rannsuu);-->
 </body>

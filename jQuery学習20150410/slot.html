@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href=slot.css>
 </head>
 <body>
+	<p　id="title">スロット1</p>
 	<table border="2px" bordercolor="black" width="400px" align="center">
 	<thead>
 		<tr id="ue">
@@ -16,9 +17,9 @@
 	</thead>
 	<tbody>
 		<tr class="atari">
-			<td id="ichiban">?</td>
-			<td id="niban">?</td>
-			<td id="sanban">?</td>
+			<td id="ichiban" data-slot="ichiban" class="reel">?</td>
+			<td id="niban" data-slot="niban" class="reel">?</td>
+			<td id="sanban" data-slot="sanban" class="reel">?</td>
 		</tr>
 		<tr class="atari">
 			<td><input type="button" id="hidari" value="止める"/></td>
@@ -27,25 +28,66 @@
 		</tr>
 	</tbody>
 	</table>
+	<p align="center">
+		<input type="button" style="background:red; font-weight:bold;" id="start" 
+		value="もう１回"/>
+	</p>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
 		$(function() {
-			$("#ichiban, #niban, #sanban").text(function() {
-				
-				setTimeout(slot, 50);
+			slot();
+			$("#start").click(function() {
+				$("#ichiban").data("slot","ichiban");
+				$("#niban").data("slot","niban");
+				$("#sanban").data("slot","sanban");
+				slot();
 			});
+	
+			
 		});
-
 		function slot() {
-			var timer = Math.floor(Math.random() * 10);
-			//if($("#ichiban, #niban, #sanban") == "?"){
-			if($("#ichiban").text() == "?"){	
-				console.log("a");
-				return timer;	
-			}
-			else{
-				console.log("b");
-				return timer;
+			$(".reel").text(function() {
+				console.log($(this).data("slot"));
+				if($(this).text() == "?"){
+					
+
+					/*return timer;
+					var timer = Math.floor(Math.random() * 2);*/
+					return Math.floor(Math.random() * 2);
+				}
+				else{
+					
+					return Math.floor(Math.random() * 2);
+				}
+
+				
+
+		});
+		setTimeout(slot,100);
+		}
+		$("#hidari").click(function() {
+			$("#ichiban").data("slot","stop");
+			slotStop();	
+		});
+		$("#chuo").click(function() {
+			$("#niban").data("slot","stop");
+			slotStop();	
+		});
+		$("#migi").click(function() {
+			$("#sanban").data("slot","stop");
+			slotStop();	
+		});
+		function slotStop() {
+			if(($("#ichiban").data("slot") == "stop") && ($("#niban").data("slot") == "stop") && ($("#sanban").data("slot") == "stop") ) 
+			{
+				if(($("#ichiban").text() == $("#niban").text())
+					&& ($("#ichiban").text() == $("#sanban").text())
+					) {
+					alert("大当たり!!");
+				}
+				else{
+					alert("はずれ");
+				}	
 			}
 		}
 	</script>
