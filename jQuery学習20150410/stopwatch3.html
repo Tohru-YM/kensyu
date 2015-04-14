@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ストップウォッチ</title>
+</head>
+<body>
+	<h1>ストップウォッチ</h1>
+		<div id="sec"  data-tokei="watch" style="font-size:110px">0.00</div>
+		<input type="button" value="スタート" id="run"/>
+		<input type="button" value="ストップ" id="stop"/>
+		<input type="button" value="リセット" id="reset"/>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+	var isStarted = false;
+	var timerId = null;
+	var startTime = (new Date()).getTime();
+
+	$(function() {
+		$("#run").click(function(){
+			if(!isStarted){
+				isStarted = true;
+				roop();
+			}
+		});
+
+		$("#stop").click(function() {
+			clearTimeout(timerId);
+		});
+
+		$("#reset").click(function() {
+			$("#sec").data("tokei", "watch").text("0.00");
+		});
+	});
+	
+	function roop() {
+		$("#sec").text(
+			(((new Date()).getTime() - startTime) / 1000).toFixed(2)
+		);
+		timerId = setTimeout(roop, 100);
+	}
+</script>
+</body>
+</html>

@@ -34,90 +34,92 @@
 	</p>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
-		$(function() {
-			slotichi();
-			slotni();
-			slotsan();
-			$("#start").click(function() {
-				$("#ichiban").data("slot","ichiban");
-				$("#niban").data("slot","niban");
-				$("#sanban").data("slot","sanban");
+		(function() {
+			$(function() {
 				slotichi();
 				slotni();
 				slotsan();
+				$("#start").click(function() {
+					$("#ichiban").data("slot","ichiban");
+					$("#niban").data("slot","niban");
+					$("#sanban").data("slot","sanban");
+					slotichi();
+					slotni();
+					slotsan();
+				});
+		
+				
 			});
-	
-			
-		});
-			function slotichi() {
-				if($("#ichiban").data("slot") == "ichiban") {
-					$("#ichiban").text(function() {
-						if($(this).text() == "?"){
-							return Math.floor(Math.random() * 10);
-						}
-						else{
-							
-							return Math.floor(Math.random() * 10);
-						}
-					});
-					setTimeout(slotichi,100);
-				}	
-			}
-			function slotni() {
-				if($("#niban").data("slot") == "niban") {
-					$("#niban").text(function() {
-						if($(this).text() == "?"){
-							return Math.floor(Math.random() * 10);
-						}
-						else{
-							
-							return Math.floor(Math.random() * 10);
-						}
-					});
-					setTimeout(slotni,100);
-				}	
-			}
-			function slotsan() {
-				if($("#sanban").data("slot") == "sanban") {
-					$("#sanban").text(function() {
-						if($(this).text() == "?"){
-							return Math.floor(Math.random() * 10);
-						}
-						else{
-							
-							return Math.floor(Math.random() * 10);
-						}
-					});
-					setTimeout(slotsan,100);
-				}	
-			}
-
-
-		$("#hidari").click(function() {
-			$("#ichiban").data("slot","stop");
-			slotStop();	
-		});
-		$("#chuo").click(function() {
-			$("#niban").data("slot","stop");
-			slotStop();	
-		});
-		$("#migi").click(function() {
-			$("#sanban").data("slot","stop");
-			slotStop();	
-		});
-		function slotStop() {
-			if(($("#ichiban").data("slot") == "stop") && ($("#niban").data("slot") == "stop") && ($("#sanban").data("slot") == "stop") ) 
-			{
-				if(($("#ichiban").text() == $("#niban").text())
-					&& ($("#ichiban").text() == $("#sanban").text())
-					) {
-					alert("大当たり!!");
+				function slotichi() {
+					if($("#ichiban").data("slot") == "ichiban") {
+						$("#ichiban").text(function() {
+							if($(this).text() == "?"){
+								return Math.floor(Math.random() * 10);
+							}
+							else{
+								
+								return Math.floor(Math.random() * 10);
+							}
+						});
+						setTimeout(slotichi,100);
+					}	
 				}
-				else{
-					alert("はずれ");
-				}	
+				function slotni() {
+					if($("#niban").data("slot") == "niban") {
+						$("#niban").text(function() {
+							if($(this).text() == "?"){
+								return Math.floor(Math.random() * 10);
+							}
+							else{
+								
+								return Math.floor(Math.random() * 10);
+							}
+						});
+						setTimeout(slotni,100);
+					}	
+				}
+				function slotsan() {
+					if($("#sanban").data("slot") == "sanban") {
+						$("#sanban").text(function() {
+							if($(this).text() == "?"){
+								return Math.floor(Math.random() * 10);
+							}
+							else{
+								
+								return Math.floor(Math.random() * 10);
+							}
+						});
+						setTimeout(slotsan,100);
+					}	
+				}
+
+
+			$("#hidari").click(function() {
+				$("#ichiban").data("slot","stop");
+				slotStop();	
+			});
+			$("#chuo").click(function() {
+				$("#niban").data("slot","stop");
+				slotStop();	
+			});
+			$("#migi").click(function() {
+				$("#sanban").data("slot","stop");
+				slotStop();	
+			});
+			function slotStop() {
+				if(($("#ichiban").data("slot") == "stop") && ($("#niban").data("slot") == "stop") && ($("#sanban").data("slot") == "stop") ) 
+				{
+					if(($("#ichiban").text() == $("#niban").text())
+						&& ($("#ichiban").text() == $("#sanban").text())
+						) {
+						alert("大当たり!!");
+					}
+					else{
+						alert("はずれ");
+					}	
+				}
 			}
-		}
+		})();	
 	</script>
 </body>
 </html>
