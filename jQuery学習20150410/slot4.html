@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>スロット2(jQuery)</title>
+	<title>スロット4(jQuery)</title>
 	<link rel="stylesheet" href=slot.css>
 </head>
 <body>
-	<p class="title">スロット2</p>
+	<p class="title">スロット4</p>
 	<table border="2px" bordercolor="black" width="400px" align="center">
 	<thead>
 		<tr id="ue">
@@ -29,36 +29,75 @@
 	</tbody>
 	</table>
 	<p align="center">
-		<input type="button" style="background:orange; font-weight:bold;" id="start" 
+		<input type="button" style="background:red; font-weight:bold;" id="start" 
 		value="もう１回"/>
 	</p>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
 		$(function() {
-			slot();
+			slotichi("#ichiban");
+			slotichi("#niban");
+			slotichi("#sanban");
+			//slotni();
+			//slotsan();
 			$("#start").click(function() {
 				$("#ichiban").data("slot","init");
 				$("#niban").data("slot","init");
 				$("#sanban").data("slot","init");
-				slot();
+				//slotichi();
+				//slotni();
+				//slotsan();
+				slotichi("#ichiban");
+				slotichi("#niban");
+				slotichi("#sanban");
 			});
-		});
-		function slot() {
-
+	
 			
-				$($("#ichiban").data("slot","init"), $("#niban").data("slot","init"), $("#sanban").data("slot","init")).text(function() {
-					if($(this).text() == "?"){
-						return Math.floor(Math.random() * 2);
-					}
-					else{
-						
-						return Math.floor(Math.random() * 2);
-					}
-				});
-				setTimeout(slot,100);
-				
-		}
-		
+		});
+			function slotichi(slotid) {
+				if($(slotid).data("slot") == "init") {
+					$(slotid).text(function() {
+						if($(this).text() == "?"){
+							return Math.floor(Math.random() * 10);
+						}
+						else{
+							
+							return Math.floor(Math.random() * 10);
+						}
+					});
+					setTimeout(slotichi,100);
+				}	
+			}
+			/*function slotni() {
+				if($("#niban").data("slot") == "niban") {
+					$("#niban").text(function() {
+						if($(this).text() == "?"){
+							return Math.floor(Math.random() * 10);
+						}
+						else{
+							
+							return Math.floor(Math.random() * 10);
+						}
+					});
+					setTimeout(slotni,100);
+				}	
+			}
+			function slotsan() {
+				if($("#sanban").data("slot") == "sanban") {
+					$("#sanban").text(function() {
+						if($(this).text() == "?"){
+							return Math.floor(Math.random() * 10);
+						}
+						else{
+							
+							return Math.floor(Math.random() * 10);
+						}
+					});
+					setTimeout(slotsan,100);
+				}	
+			}*/
+
+
 		$("#hidari").click(function() {
 			$("#ichiban").data("slot","stop");
 			slotStop();	

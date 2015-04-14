@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ストップウォッチ</title>
+</head>
+<body>
+	<h1>ストップウォッチ</h1>
+		<div id="sec" style="font-size:110px">0.00</div>
+		<input type="button" value="スタート" onclick="start();"/>
+		<input type="button" value="ストップ" id="stoptimer"/>
+		<input type="button" value="リセット" id="resettimer"/>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+	startTime = (new Date()).getTime();
+	function start(){
+		$("#sec").text(function() {
+			return (((new Date()).getTime() - startTime) / 1000).toFixed(2);
+		});
+		setTimeout(start,100);
+	}
+
+</script>
+</body>
+</html>

@@ -2,10 +2,11 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>スロット(jQuery)</title>
+	<title>スロット3(jQuery)</title>
 	<link rel="stylesheet" href=slot.css>
 </head>
 <body>
+	<p class="title">スロット3</p>
 	<table border="2px" bordercolor="black" width="400px" align="center">
 	<thead>
 		<tr id="ue">
@@ -45,7 +46,7 @@
 
 			var isSpin = false;
 			$("#ichiban, #niban, #sanban").each(function() {
-				var timer = Math.floor(Math.random() * 2);
+				var timer = Math.floor(Math.random() * 10);
 				if($(this).attr("spin") == "true"){	
 					$(this).text(timer);
 					isSpin = true;	
@@ -53,7 +54,7 @@
 				
 			});
 			if(isSpin){
-				setTimeout(slot,500);
+				setTimeout(slot,100);
 			} 
 		}	
 		$("#hidari").click(function() {

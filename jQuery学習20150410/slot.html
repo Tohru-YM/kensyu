@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>スロット(jQuery)</title>
+	<title>スロット1(jQuery)</title>
 	<link rel="stylesheet" href=slot.css>
 </head>
 <body>
-	<p　id="title">スロット1</p>
+	<p class="title">スロット1</p>
 	<table border="2px" bordercolor="black" width="400px" align="center">
 	<thead>
 		<tr id="ue">
@@ -35,36 +35,64 @@
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
 		$(function() {
-			slot();
+			slotichi();
+			slotni();
+			slotsan();
 			$("#start").click(function() {
 				$("#ichiban").data("slot","ichiban");
 				$("#niban").data("slot","niban");
 				$("#sanban").data("slot","sanban");
-				slot();
+				slotichi();
+				slotni();
+				slotsan();
 			});
 	
 			
 		});
-		function slot() {
-			$(".reel").text(function() {
-				console.log($(this).data("slot"));
-				if($(this).text() == "?"){
-					
+			function slotichi() {
+				if($("#ichiban").data("slot") == "ichiban") {
+					$("#ichiban").text(function() {
+						if($(this).text() == "?"){
+							return Math.floor(Math.random() * 10);
+						}
+						else{
+							
+							return Math.floor(Math.random() * 10);
+						}
+					});
+					setTimeout(slotichi,100);
+				}	
+			}
+			function slotni() {
+				if($("#niban").data("slot") == "niban") {
+					$("#niban").text(function() {
+						if($(this).text() == "?"){
+							return Math.floor(Math.random() * 10);
+						}
+						else{
+							
+							return Math.floor(Math.random() * 10);
+						}
+					});
+					setTimeout(slotni,100);
+				}	
+			}
+			function slotsan() {
+				if($("#sanban").data("slot") == "sanban") {
+					$("#sanban").text(function() {
+						if($(this).text() == "?"){
+							return Math.floor(Math.random() * 10);
+						}
+						else{
+							
+							return Math.floor(Math.random() * 10);
+						}
+					});
+					setTimeout(slotsan,100);
+				}	
+			}
 
-					/*return timer;
-					var timer = Math.floor(Math.random() * 2);*/
-					return Math.floor(Math.random() * 2);
-				}
-				else{
-					
-					return Math.floor(Math.random() * 2);
-				}
 
-				
-
-		});
-		setTimeout(slot,100);
-		}
 		$("#hidari").click(function() {
 			$("#ichiban").data("slot","stop");
 			slotStop();	
@@ -91,6 +119,5 @@
 			}
 		}
 	</script>
-				<!--var slot = $(this).text(rannsuu);-->
 </body>
 </html>
