@@ -35,9 +35,9 @@
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script>
 		$(function() {
-			slotichi("#ichiban");
-			slotichi("#niban");
-			slotichi("#sanban");
+			slot("#ichiban");
+			slot("#niban");
+			slot("#sanban");
 			//slotni();
 			//slotsan();
 			$("#start").click(function() {
@@ -47,14 +47,14 @@
 				//slotichi();
 				//slotni();
 				//slotsan();
-				slotichi("#ichiban");
-				slotichi("#niban");
-				slotichi("#sanban");
+				slot("#ichiban");
+				slot("#niban");
+				slot("#sanban");
 			});
 	
 			
 		});
-			function slotichi(slotid) {
+			function slot(slotid) {
 				if($(slotid).data("slot") == "init") {
 					$(slotid).text(function() {
 						if($(this).text() == "?"){
@@ -65,7 +65,7 @@
 							return Math.floor(Math.random() * 10);
 						}
 					});
-					setTimeout(slotichi,100);
+					setTimeout("slot('" + slotid + "')", 100);
 				}	
 			}
 			/*function slotni() {
