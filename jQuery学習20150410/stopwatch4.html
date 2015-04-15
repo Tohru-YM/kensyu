@@ -2,13 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>ストップウォッチ</title>
+<title>ストップウォッチ4</title>
 </head>
 <body>
-	<h1>ストップウォッチ</h1>
+	<h1>ストップウォッチ4</h1>
 		<div id="sec"  data-tokei="watch" style="font-size:110px">0.00</div>
-		<input type="button" value="スタート" id="run"/>
-		<input type="button" value="ストップ" id="stop"/>
+		<input type="button" value="スタート" style="width:58px" data-startAndStop="start" id="run"/>
 		<input type="button" value="リセット" id="reset"/>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script>
@@ -18,35 +17,30 @@
 		running = false,
 		timerId;
 		$(function() {
-			
-
-				/*$("#run").click(function roop() {
-					if($("#sec").data("tokei") == "watch") {
-						$("#sec").text(function () {
-							return (((new Date()).getTime() - startTime) / 1000).toFixed(2);
-						});
-						setTimeout(function() {roop();}, 100);
-					}	
-				});*/
 				$("#run").click(function() {
-					if(running) return;
-					running = true;
+					if($("#run").val() == "スタート") {
+						if(running) return;
+						running = true;
 
-					if(stopTime) {
-						startTime = startTime + (new Date()).getTime() -stopTime;
+						if(stopTime) {
+							startTime = startTime + (new Date()).getTime() -stopTime;
+						}
+						if(!startTime) {
+							startTime = (new Date()).getTime();
+						}
+						timer();
 					}
-					if(!startTime) {
-						startTime = (new Date()).getTime();
-					}
-					timer();
-				});
-				$("#stop").click(function() {
-					if(running) {
+					else{
+						if(running) {
+
 						running = false;
 						clearTimeout(timerId);
 						stopTime = (new Date()).getTime();
+						
+						}
+						else return;
+						$("#run").val("スタート");
 					}
-					else return;	
 				});
 				$("#reset").click(function() {
 					if(running) return;
@@ -59,6 +53,7 @@
 					return (((new Date()).getTime() - startTime) / 1000).toFixed(2);
 				});
 				timerId = setTimeout(timer, 100);
+				$("#run").val("ストップ");
 		}
 }());
 </script>

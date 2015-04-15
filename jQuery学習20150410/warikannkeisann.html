@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>割り勘電卓</title>
+</head>
+<body>
+	<h1>
+		割り勘電卓
+	</h1>
+	<p>支払額: <input type="text" id="amount"></p>
+	<p>人数: <input type="text" id="num"></p>
+	<p><input type="button" value="計算" id="cal"></p>
+	<p id="result_kirisute"></p>
+	<p id="result_kiriage"></p>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+	$("#cal").click(function() {
+		var amount = $("#amount").val(),
+			num = $("#num").val(),
+			unit = 100;
+			kirisute = Math.floor((amount / num) / unit) * unit,
+			kirisute_amari = amount - (kirisute * num),
+			kiriage = Math.ceil((amount / num) / unit) * unit,
+			kiriage_amari = (kiriage * num) - amount;
+
+			if(isNaN(kirisute)){
+				$("#result_kirisute").text("算用数字で入力してください。");
+			}
+			else{
+				if(kirisute_amari == 0) {
+					$("#result_kirisute").text("一人当たり" + kirisute + "円です");
+				}
+				else{
+					$("#result_kirisute").text("一人当たり" + kirisute + "円だと"　+ kirisute_amari + "円足りません。");
+					$("#result_kiriage").text("一人当たり" + kiriage + "円だと"　+ kiriage_amari + "円余ります。");
+				}
+			}
+		
+	});
+</script>
+</body>
+</html>
