@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>割り勘電卓</title>
+<link rel="stylesheet" href="warikan.css">
 </head>
 <body>
 	<h1>
@@ -11,10 +12,21 @@
 	<p>支払額: <input type="text" id="amount"></p>
 	<p>人数: <input type="text" id="num"></p>
 	<p><input type="button" value="計算" id="cal"></p>
-	<p id="result_kirisute"></p>
-	<p id="result_kiriage"></p>
+	<p id="result_kirisute"> </p>
+	<p id="result_kiriage"> </p><br>
+	<table>
+		<tbody>
+			<tr><td><input type="button" id="seven" value="7"></td><td><input type="button" id="eight" value="8"></td><td><input type="button" id="nine" value="9"></td></tr>
+			<tr><td><input type="button" id="four" value="4"></td><td><input type="button" id="five" value="5"></td><td><input type="button" id="six" value="6"></td></tr>
+			<tr><td><input type="button" id="one" value="1"></td><td><input type="button" id="two" value="2"></td><td><input type="button" id="three" value="3"></td></tr>
+			<tr><td><input type="button" id="zero" value="0"></td><td><input type="button" id="clear" value="クリア"></td></tr>
+			<tr><td><input type="button" id="siharai" value="支払額へ"></td></tr>
+			<tr><td><input type="button" id="ninnzuu" value="人数へ"></td></tr>
+		</tbody>
+	</table>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script>
+(function() {
 	$("#cal").click(function() {
 		var amount = $("#amount").val(),
 			num = $("#num").val(),
@@ -24,20 +36,60 @@
 			kiriage = Math.ceil((amount / num) / unit) * unit,
 			kiriage_amari = (kiriage * num) - amount;
 
-			if(isNaN(kirisute)){
-				$("#result_kirisute").text("算用数字で入力してください。");
+			if($("#num").val() == 0){
+				alert("人数が0人になっています。");
 			}
 			else{
-				if(kirisute_amari == 0) {
-					$("#result_kirisute").text("一人当たり" + kirisute + "円です");
+				if(isNaN(kirisute)){
+					$("#result_kirisute").text("算用数字で入力してください。");
 				}
 				else{
-					$("#result_kirisute").text("一人当たり" + kirisute + "円だと"　+ kirisute_amari + "円足りません。");
-					$("#result_kiriage").text("一人当たり" + kiriage + "円だと"　+ kiriage_amari + "円余ります。");
+					if(kirisute_amari == 0) {
+						$("#result_kirisute").text("一人当たり" + kirisute + "円です");
+					}
+					else{
+						$("#result_kirisute").text("一人当たり" + kirisute + "円だと"　+ kirisute_amari + "円足りません。");
+						$("#result_kiriage").text("一人当たり" + kiriage + "円だと"　+ kiriage_amari + "円余ります。");
+					}
 				}
 			}
-		
 	});
+}());
+$("#one").click(function() {
+
+});
+$("#two").click(function() {
+	
+});
+$("#three").click(function() {
+	
+});
+$("#four").click(function() {
+	
+});
+$("#five").click(function() {
+	
+});
+$("#six").click(function() {
+	
+});
+$("#seven").click(function() {
+	
+});
+$("#eight").click(function() {
+	
+});
+$("#nine").click(function() {
+	
+});
+$("#zero").click(function() {
+	
+});
+$("#siharai").click(function() {
+	
+});$("#ninnzuu").click(function() {
+	
+});
 </script>
 </body>
 </html>
