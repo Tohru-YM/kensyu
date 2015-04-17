@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+	<meta charset = "utf-8">
+	<title>Bootstrap学習3</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container" style=" padding:20px 0;">
+
+		<p>Product A <span class="label label-primary">NEW</span></p>
+		<p>Inbox <span class="badge" id="badge"></span></p>
+		<input type="text" id="amount">
+		<input type="button" id="sosin" value="テスト">
+		<div class="alert alert-info">
+			おしらせ
+			<button class="close" data-dismiss="alert">&times;</button>
+		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">おしらせ</div>
+			<div class="panel-body">こんにちは</div>
+
+		</div>
+
+		<div class="progress">
+			<div class="progress-bar progress-bar-primary" style="width:60%"></div>
+		</div>
+
+		<div class="progress progress-striped active">
+			<div class="progress-bar progress-bar-warning" style="width:50%"></div>
+			<div class="progress-bar progress-bar-primary" style="width:40%"></div>
+			<div class="progress-bar progress-bar-info" style="width:10%"></div>
+		</div>
+
+		<a data-toggle="modal" href="#mymodal" class="btn btn-primary">show me</a>
+
+		<div class="modal fade" id="mymodal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Mymodal</h4>
+					</div>
+					<div class="modal-body">aaaaaaa</div>
+					<div class="modal-footer">
+						<button class="btn btn-primary">ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<ul class="nav nav-tabs" style="margin-bottom:15px">
+			<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+			<li><a href="#about" data-toggle="tab">About</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="home">ホーム</div>
+			<div class="tab-pane" id="about">アバウト</div>
+		</div>
+
+	</div>
+
+
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+(function() {
+	$("#sosin").click(function() {
+		var a =  $("#amount").val();
+		$("#badge").text(a);
+	});
+}());
+
+</script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
