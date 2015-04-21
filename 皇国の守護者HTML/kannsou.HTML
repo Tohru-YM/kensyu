@@ -1,71 +1,109 @@
 <!DOCTYPE html>
- <html lang="ja">
-  <head>
-    <meta charset="utf8">
-     <title>『皇国の守護者』感想コメント</title>
-      <link rel="stylesheet"href=default.css>
-      <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-  </head>
-  <body>
-  	<script>	
-		function sendButtonClick(){
-		//	var x=document.getElementById("selection").value;
-		var x=$(".yamada").val();	
-			/*if(x=="新城直衛"){
-				alert("Yes");	
-			}else if(x=="千早"){
-				alert("YesYes");
-			}else{
-				alert("No");
+<html lang="ja">
+<head>
+	<meta charset="utf8">
+	<title>『皇国の守護者』感想コメント</title>
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body style="background:skyblue;">
+	
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+
+		    <div class="navbar-header">
+		      <button 
+		      class="navbar-toggle" 
+		      data-toggle="collapse" 
+		      data-target=".target">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a href="index.html" style="font-weight:bold; font-size:20px; color:white;"> 『皇国の守護者1巻』</a>
+		    </div>
+		      <div class="collapse navbar-collapse target"> 
+		        <ul class="nav navbar-nav">
+		          <li><a href="gaisetu.html">概説</a></li>
+		          <li><a href="naiyou.html">内容</a></li>
+		          <li><a href="zinbutu.html">登場人物</a></li>
+		          <li><a href="kakukantitle.html">各巻タイトル</a></li>
+		          <li class="active"><a href="kannsou.html">感想コメント</a></li>
+		        </ul>
+
+		      </div>
+		</nav>
+
+		<div class="container" style="margin-top:100px">
+
+		<form action="surver"  method="post">
+
+			<div class="form-group">
+
+				<label class="control-label" for="comment">感想コメント</label>
+				<textarea placeholder="コメントを入力してください" id="comment" name="comment" class="yamada form-control col-sm-6 col-xs-3" rows="5"　></textarea>
 			
-			}*/
-			switch(x){
-				case "新城直衛":
-					console.log("Yes");
-					break;
-				case "千早":
-					console.log("YesYes");
-					break;
-				default:
-					console.log("No");
+			</div>
+			<p>
+				好きな登場人物を選んでください:
+				<select name="登場人物" id="selection">
+				<option value="新城直衛">新城直衛</option>
+				<option value="千早">千早</option>
+				<option value="猪口曹長">猪口曹長</option>
+				<option value="西田少尉"selected>西田少尉</option>
+				<option value="漆原少尉">漆原少尉</option>
+				<option value="ユーリア・ド・ヴェルナ・ツァリツィア・ロッシナ">ユーリア・ド・ヴェルナ・ツァリツィア・ロッシナ</option>
+			</select>
+			</p>
+			<p>
+				<button class="btn btn-default" onClick=" return sendButtonClick()" id="button">ボタン</button>
+				<input class="btn btn-primary" type="button" id="test" value="テスト"/>
+
+				<div class="form-group">
+					<input type="submit" id="surver" name="submit" value="送信" class="btn btn-primary"/>
+				</div>
+			</p>
+
+		</form>
+
+		<div id="box3">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+		<div id="box4">iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
+		<div id="box5"/>
+
+	</div>
+
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>	
+	function sendButtonClick(){
+	//	var x=document.getElementById("selection").value;
+		var x=$(".yamada").val();	
+		/*if(x=="新城直衛"){
+		alert("Yes");	
+		}else if(x=="千早"){
+		alert("YesYes");
+		}else{
+		alert("No");
+
+		}*/
+		switch(x){
+			case "新城直衛":
+			console.log("Yes");
+			break;
+			case "千早":
+			console.log("YesYes");
+			break;
+			default:
+			console.log("No");
 
 
-			}
-			//alert(x);
-			/*iiiiiいいいいいいいい
-			uuuuuuuううううううう
-			eeeeeeええええええええええええ
-			*/
-			return false;
 		}
-  	</script>
-<form action="surver"  method="post">
-	<p>
-		感想コメント:
-			<textarea id="comment" name="comment" class="yamada" cols="40" rows="5"　placeholder="コメントを選択してください">コメント</textarea>
-	</p>
-	<p>
-		好きな登場人物を選んでください:
-		   <select name="登場人物" id="selection">
-   			<option value="新城直衛">新城直衛</option>
-			<option value="千早">千早</option>
-			<option value="猪口曹長">猪口曹長</option>
-			<option value="西田少尉"selected>西田少尉</option>
-			<option value="漆原少尉">漆原少尉</option>
-			<option value="ユーリア・ド・ヴェルナ・ツァリツィア・ロッシナ">ユーリア・ド・ヴェルナ・ツァリツィア・ロッシナ</option>
-		   </select>
-	</p>
-	<p>
-		<button onClick=" return sendButtonClick()" id="button">ボタン</button>
-		<input type="button" id="test" value="テスト"/>
-		<input type="submit" id="surver" name="submit" value="送信"/>
-	</p>
-</form>
-<p>
-  <a href="index.html">目次に戻る</a>
-<p>
-<div id="box3">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
-<div id="box4">iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
-<div id="box5"/>
-  </body>
+		//alert(x);
+		/*iiiiiいいいいいいいい
+		uuuuuuuううううううう
+		eeeeeeええええええええええええ
+		*/
+		return false;
+	}
+</script>
+</body>
 </html>  
