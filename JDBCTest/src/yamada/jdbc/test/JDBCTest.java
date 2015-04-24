@@ -22,16 +22,16 @@ public class JDBCTest {
 
 	public void simpleSQL(){
 		Connection conn = null;
-		String url = "jdbc:mysql://localhost/passo_web";
-	    String user = "passo_web";
-	    String password = "passo_web";
+		String url = "jdbc:mysql://localhost/blog_app";
+	    String user = "dbuser";
+	    String password = "ptprfd";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			conn = DriverManager.getConnection(url, user, password);
 
 			Statement stmt = conn.createStatement();
-			String sql = "select * from client";
+			String sql = "select * from users";
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while(rs.next()){
