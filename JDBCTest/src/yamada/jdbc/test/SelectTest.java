@@ -35,13 +35,49 @@ public class SelectTest {
 			stmt.close(); //閉じる
 
 		} catch (SQLException e) {
-			System.out.println("SQLException:" + e.getMessage());//SQL文か接続ミスで発生
+			e.printStackTrace();//SQL文か接続ミスで発生
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+				}
+			}
+
 		}
+
 	}
 
 	public static void main(String[] args) {
 		SelectTest selectTest = new SelectTest();
 		selectTest.simpleSQL();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 }
 
