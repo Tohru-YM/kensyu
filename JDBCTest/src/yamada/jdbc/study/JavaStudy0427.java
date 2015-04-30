@@ -8,13 +8,16 @@ public class JavaStudy0427 {
 		if (selected == 1){
 				System.out.println("検索します");
 		}
-		if (selected == 2){
+
+		else if (selected == 2){
 				System.out.println("登録します");
 		}
-		if (selected == 3){
+
+		else if (selected == 3){
 				System.out.println("削除します");
 		}
-		if (selected == 4){
+
+		else if (selected == 4){
 				System.out.println("変更します");
 		}
 		else {

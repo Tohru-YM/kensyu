@@ -19,6 +19,11 @@ public class JavaStudy0427_03 {
 		for (int n : numbers) {
 			if (n == input) {
 				System.out.println("アタリ!");
+				break;
+			}
+			else {
+				System.out.println("はずれ");
+				break;
 			}
 		}
 	}
