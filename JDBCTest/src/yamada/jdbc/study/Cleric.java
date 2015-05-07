@@ -18,10 +18,11 @@ public class Cleric {
 		this.name = name;
 		this.hp = hp;
 	}
-	/*Cleric(String name) {
-		this.name = name;
-		this(name, Cleric.MAX_HP);
-	}*/
+//	Cleric(String name) {
+//		this.name = name;
+//		this(name, Cleric.MAX_HP);
+//		//上2つに格納
+//	}
 
 	void selfAid() {
 		System.out.println(this.name + "はセルフエイドを唱えた!");

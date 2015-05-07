@@ -5,20 +5,23 @@ package yamada.jdbc.study;
 public class Hero {
 	private String name;
 	private int hp;
+	private int max_hp;
+	private int power;
 	static int money;
 
-	Sword sword;
+	private Sword sword;
 
 
 
 	//フィールド
 
 
-	Hero(String name) {
-		this.hp = 100;
+	public Hero(String name) {
+		this.hp = 50;
+		this.max_hp = this.hp;
 		this.name = name;
 	}
-	Hero() {
+	public Hero() {
 		this("ロト");
 	}
 
@@ -37,6 +40,29 @@ public class Hero {
 		//setterメソッド
 	}
 
+	public int getPower() {
+		return this.power;
+		//getterメソッド
+	}
+
+	public void setPower(int power) {
+		this.power = power;
+		//setterメソッド
+	}
+
+	public int getMax_hp() {
+		return max_hp;
+	}
+	public void setMax_hp(int max_hp) {
+		this.max_hp = max_hp;
+	}
+
+	public static final int getMoney() {
+		return money;
+	}
+	public static final void setMoney(int money) {
+		Hero.money = money;
+	}
 	public void setName(String name) {
 		if (name.equals(null)) {
 			throw new IllegalArgumentException("名前がnullである。処理を中断。");
@@ -52,19 +78,29 @@ public class Hero {
 		//setterメソッド
 	}
 
-	void attack() {
-		System.out.println(this.name + sword.name +"で攻撃した!");
-		System.out.println("敵に5のダメージを与えた!");
+	public Sword getSword() {return this.sword;}
+	public void setSword(Sword sword) {this.sword = sword;}
 
+	public void attack(Enemy enemy) {
+		System.out.println(this.name + sword.getName() +"で" + enemy.getName() + enemy.getSuffix() + "攻撃した!");
+		int dame = (int) (this.power  * sword.getDamage());
+		enemy.setHp(enemy.getHp() - dame);
+		System.out.println("敵に" + dame + "のダメージを与えた!");
+
+		if(enemy.getHp() <= 0) {enemy.die(this, enemy);}
+		else{
+		System.out.println(enemy.getName() + "の残りHP:" + enemy.getHp());
+		}
 	}
 
 
 
-	void run() {
-		int n =  new java.util.Random().nextInt(2);
 
-		if (n == 0) {
-		System.out.println(this.name + "は、逃げ出した!");
+	public void run(Enemy enemy) {
+
+		//↓あってるか不安
+		if (enemy.getRun() == 0) {
+		System.out.println(this.name + "は、" + enemy.getName() + enemy.getSuffix() + "から逃げ出した!");
 		System.out.println("GAME OVER");
 		System.out.println("最終HPは" + this.hp + "でした");
 		}
@@ -74,28 +110,28 @@ public class Hero {
 		}
 	}
 
-	void bye() {
+	public final void bye() {
 		System.out.println("勇者は別れを告げた");
 	}
 
-	private void die() {
+	public void die() {
 		System.out.println(this.name + "は死んでしまった!");
 		System.out.println("GAME OVER");
 	}
 
-	void sit(int sec) {
+	public void sit(int sec) {
 		this.hp += sec;
 		System.out.println(this.name + "は、" + sec + "秒座った");
 		System.out.println(this.name + "は、" + sec + "ポイント回復した!");
 	}
 
-	void slip() {
+	public void slip() {
 		this.hp -= 5;
 		System.out.println(this.name + "は、転んだ!");
 		System.out.println("5のダメージ!");
 	}
 
-	void sleep() {
+	public void sleep() {
 		this.hp = 100;
 		System.out.println(this.name + "は、眠って回復した!");
 	}

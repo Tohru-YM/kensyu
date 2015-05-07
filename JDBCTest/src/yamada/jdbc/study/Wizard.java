@@ -18,12 +18,18 @@ public class Wizard {
 	public Wand getWand() {return this.wand;}
 	public void setWand(Wand wand) {this.wand = wand;}
 
-//	public void heal (Hero hero) {
-//		int basePoint = 10;
-//		int recoverPoint = (int) (basePoint * ww.getPower());
-//
-//		hero.setHp(hero.getHp() + recoverPoint);
-//		System.out.println(hero.getName() + "のHPを" + recoverPoint + "回復した(" + hero.getHp() + ")");
-//		// x はローカル変数
-//	}
+	public void heal (Hero hero) {
+		int basePoint = 10;
+		int recoverPoint = (int) (basePoint * wand.getPower());
+
+		if (recoverPoint+hero.getHp() >= hero.getMax_hp()) {
+			hero.setHp(hero.getMax_hp());
+			System.out.println(hero.getName() + "は全回復した(" + hero.getHp() + ")");
+		}
+		else {
+		hero.setHp(hero.getHp() + recoverPoint);
+		System.out.println(hero.getName() + "のHPを" + recoverPoint + "回復した(" + hero.getHp() + ")");
+		// x はローカル変数
+		}
+	}
 }

@@ -67,3 +67,102 @@
 ////		named.run();
 //	}
 //}
+//public class Hero extends Character {
+//
+//	static int money;
+//	public static final int getMoney() {return money;}
+//	public static final void setMoney(int money) {Hero.money = money;}
+//	private Sword sword;
+//
+//
+//
+//	//フィールド
+//
+//
+//	public Hero(String name) {
+//		setHp(50);
+//		setMax_hp(this.hp);
+//		setName(name);
+//	}
+//	public Hero() {
+//		this("ロト");
+//	}
+//
+//
+//
+//
+//
+//	public void setName(String name) {
+//		if (name.equals(null)) {
+//			throw new IllegalArgumentException("名前がnullである。処理を中断。");
+//		}
+//		if (name.length() <= 1) {
+//			throw new IllegalArgumentException("名前が短すぎる。処理を中断。");
+//		}
+//		if (name.length() >= 6) {
+//			throw new IllegalArgumentException("名前が長すぎる。処理を中断。");
+//		}
+//
+//		setName(name);
+//		//setterメソッド
+//	}
+//
+//	public Sword getSword() {return this.sword;}
+//	public void setSword(Sword sword) {this.sword = sword;}
+//
+//	public void attack(Enemy enemy) {
+//		System.out.println(this.name + sword.getName() +"で" + enemy.getName() + enemy.getSuffix() + "攻撃した!");
+//		int dame = (int) (this.power  * sword.getDamage());
+//		enemy.setHp(enemy.getHp() - dame);
+//		System.out.println("敵に" + dame + "のダメージを与えた!");
+//
+//		if(enemy.getHp() <= 0) {enemy.die(this, enemy);}
+//		else{
+//		System.out.println(enemy.getName() + "の残りHP:" + enemy.getHp());
+//		}
+//	}
+//
+//
+//
+//
+//	public void run(Enemy enemy) {
+//
+//		//↓あってるか不安
+//		if (enemy.getRun() == 0) {
+//		System.out.println(this.name + "は、" + enemy.getName() + enemy.getSuffix() + "から逃げ出した!");
+//		System.out.println("GAME OVER");
+//		System.out.println("最終HPは" + this.hp + "でした");
+//		}
+//		else {
+//			System.out.println(this.name + "は、逃げ出した!");
+//			System.out.println("しかし回り込まれてしまった!");
+//		}
+//	}
+//
+//	public final void bye() {
+//		System.out.println("勇者は別れを告げた");
+//	}
+//
+//	public void die() {
+//		System.out.println(this.name + "は死んでしまった!");
+//		System.out.println("GAME OVER");
+//	}
+//
+//	public void sit(int sec) {
+//		this.hp += sec;
+//		System.out.println(this.name + "は、" + sec + "秒座った");
+//		System.out.println(this.name + "は、" + sec + "ポイント回復した!");
+//	}
+//
+//	public void slip() {
+//		this.hp -= 5;
+//		System.out.println(this.name + "は、転んだ!");
+//		System.out.println("5のダメージ!");
+//	}
+//
+//	public void sleep() {
+//		this.hp = 100;
+//		System.out.println(this.name + "は、眠って回復した!");
+//	}
+//}
+
