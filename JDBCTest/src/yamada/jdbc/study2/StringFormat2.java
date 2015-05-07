@@ -84,7 +84,7 @@ public class StringFormat2 {
 		StringBuffer sb = new StringBuffer();
 		while((str =  br.readLine()) != null){
 			sb.append(str);
-			sb.append("\r\n");
+			sb.append("\r\n");//改行 \r = CR  \n = LF
 		}
 
 		System.out.println(sb.toString());

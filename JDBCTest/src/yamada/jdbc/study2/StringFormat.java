@@ -109,7 +109,7 @@ public class StringFormat {
 		if (s4.isEmpty()) {
 			System.out.println("s4は空っぽ");
 		}
-		String s5 = "Java and JavaScript";
+		String s5 = "Test Java and JavaScript";
 		if (s5.contains("Java")) {
 			System.out.println("文字列s5は、Javaが含まれています");
 		}
@@ -117,12 +117,19 @@ public class StringFormat {
 			System.out.println("文字列s5は末尾に、Javaが含まれています");
 		}
 
-//		StringBuilder sb = new StringBuilder();
-//		for(int i = 0; i < 10000; i++) {
-//		sb.append("Java");
-//		System.out.println(sb);
-//		}
-//		String s6 = sb.toString();
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < 2; i++) {
+		sb.append("Java");
+
+		System.out.println(sb);
+		}
+		String s6 = sb.toString();
+		System.out.println(s6);
+
+
+//		try {
+//			subsub();
+//		}catch(IOException)
 
 	}
 }
