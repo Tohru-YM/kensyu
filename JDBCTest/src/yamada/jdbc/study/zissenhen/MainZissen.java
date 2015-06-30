@@ -1,14 +1,20 @@
 package yamada.jdbc.study.zissenhen;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import yamada.jdbc.study.Hero;
+
 public class MainZissen {
 
-	public static void main(String[] args) {
+	public static void main (String[] args) {
 		String s1 = "スッキリJava";
 		String s2 = "Java";
 		String s3 = "java";
@@ -97,5 +103,61 @@ public class MainZissen {
 		for(String sw : words) {
 		System.out.println(sw + ",");
 		}
+
+		Map <Integer, String> city = new HashMap <Integer, String> ();
+		city.put(1, "東京都");
+		city.put(2, "千葉県");
+		city.put(3, "神奈川県");
+
+		System.out.println(city.get(1));
+		System.out.println(city.keySet());
+		for( int key : city.keySet()) {
+			System.out.println( key + "番 " + city.get(key) );
+		}
+
+		Hero h1 = new Hero ("鈴木");
+		Hero h2 = new Hero ("斎藤");
+
+		List <Hero> heros = new ArrayList<Hero>();
+
+		heros.add(h1);
+		heros.add(h2);
+
+		System.out.println(h1.getName());
+		System.out.println((heros.get(0)).getName());
+
+		System.out.println("---------------------------------------------");
+
+		for (int i = 0; i < heros.size(); i++) {
+
+			System.out.println((heros.get(i)).getName());
+		}
+		System.out.println("---------------------------------------------");
+		for(Hero sp : heros) {
+			System.out.println(sp.getName());
+		}
+		System.out.println("---------------------------------------------");
+		Iterator<Hero> its = heros.iterator();
+		while(its.hasNext()) {
+
+			Hero e = its.next();
+			System.out.println(e.getName());
+		}
+
+		//Map< Hero, Integer> heros1 = new TreeMap< Hero, Integer>();
+		Map< Hero, Integer> heros1 = new LinkedHashMap< Hero, Integer>();
+
+		heros1.put(h1, 3);
+		heros1.put(h2, 7);
+
+		System.out.println("---------------------------------------------");
+
+		for (Hero key : heros1.keySet()) {
+			int value = heros1.get(key);
+			System.out.println(key.getName() + "が倒した敵=" + value);
+			//結果が逆
+		}
+
 	}
+
 }

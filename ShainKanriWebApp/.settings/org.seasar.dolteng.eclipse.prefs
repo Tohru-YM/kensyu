@@ -1,0 +1,8 @@
+DaoType=S2JDBC
+DefaultResourcePath=/ShainKanriWebApp/src/main/resources
+DefaultRootPackage=jp.bric.yamada.shainkanriwebapp
+DefaultSrcPath=/ShainKanriWebApp/src/main/java
+ServletPath=/ShainKanriWebApp
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1

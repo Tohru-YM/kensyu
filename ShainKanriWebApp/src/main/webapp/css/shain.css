@@ -1,0 +1,52 @@
+body {
+	padding-top: 70px;
+}
+
+input[type="checkbox"] {
+	cursor: pointer;
+}
+
+input[type="radio"] {
+	cursor: pointer;
+}
+
+.result th {
+	text-align:center;
+}
+
+.result td {
+	text-align:center;
+}
+
+.shainBangou{
+	font-weight: bolder;
+}
+
+label{
+	cursor:pointer;
+}
+
+@media (min-width: 768px) {
+    .jusyo-size {
+        width: 50px;
+        text-overflow: ellipsis;
+    }
+}
+@media (min-width: 992px) {
+    .jusyo-size {
+        width: 100px;
+        text-overflow: ellipsis;
+    }
+}
+@media (min-width: 1200px) {
+    .jusyo-size {
+	    width: 150px;
+	    text-overflow: ellipsis;
+   	}
+}
+
+/* div.jusyo-size:after{ */
+/* 	    content: "..."; */
+
+/* } */
+
