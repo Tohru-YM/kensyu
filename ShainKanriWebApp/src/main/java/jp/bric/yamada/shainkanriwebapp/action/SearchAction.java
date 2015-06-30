@@ -20,6 +20,7 @@ import org.seasar.framework.beans.util.Beans;
 import org.seasar.framework.util.StringUtil;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.ResponseUtil;
 
 public class SearchAction{
 
@@ -174,6 +175,12 @@ public class SearchAction{
 				"入力"));
 		}
 		return errors;
+	}
+
+	@Execute(validator = false)
+	public String ajax() {
+		ResponseUtil.write(searchForm.ajaxTest);
+		return null;
 	}
 
 }

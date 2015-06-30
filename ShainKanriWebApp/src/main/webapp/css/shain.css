@@ -29,18 +29,21 @@ label{
 @media (min-width: 768px) {
     .jusyo-size {
         width: 50px;
+        max-width: 50px;
         text-overflow: ellipsis;
     }
 }
 @media (min-width: 992px) {
     .jusyo-size {
         width: 100px;
+        max-width: 100px;
         text-overflow: ellipsis;
     }
 }
 @media (min-width: 1200px) {
     .jusyo-size {
 	    width: 150px;
+	    max-width: 150px;
 	    text-overflow: ellipsis;
    	}
 }

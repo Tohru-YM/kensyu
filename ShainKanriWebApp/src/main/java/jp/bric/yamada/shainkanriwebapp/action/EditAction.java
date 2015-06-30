@@ -41,6 +41,10 @@ public class EditAction {
 		Shain shain = shainExService.findById(shainId);
 		if (shain == null) {
 			//TODO ほかの人にデータを消されていた場合の処理。
+			ActionMessages errors = new ActionMessages();
+			errors.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage(
+					"errors.not.exsist"));
+			ret = "/search/";
 		}
 		else {
 			Beans.copy(shain, editForm).execute();

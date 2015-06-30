@@ -12,6 +12,14 @@
 	<div class="container">
 
 		<tiles:insert page="/WEB-INF/view/common/search.jsp"  />
+
+			<s:form styleId="form-ajax">
+				<html:text property="ajaxTest"></html:text>
+
+				<input type="button" class="ajax btn btn-primary" value="Ajaxテスト">
+			</s:form>
+
+
 		<c:choose>
 			<c:when test="${f:h(resultDto.count) == 0 }">
 				<p class="alert alert-danger">検索条件に該当するデータはありません</p>
@@ -255,6 +263,16 @@
 // 			return false;
 // 		}
 
+		$(".ajax").click(function(){
+			$.ajax({
+				type: "POST",
+				url: '${f:url('ajax')}',
+				data: $("#form-ajax").serialize(),
+				success: function(html){
+					alert(html);
+				}
+			});
+		});
 
 
 	});

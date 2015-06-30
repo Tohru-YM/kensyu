@@ -9,7 +9,7 @@ import org.seasar.extension.jdbc.name.PropertyName;
  * {@link Shain}のプロパティ名の集合です。
  * 
  */
-@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/06/12 11:25:36")
+@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.NamesModelFactoryImpl"}, date = "2015/06/30 14:41:36")
 public class ShainNames {
 
     /**

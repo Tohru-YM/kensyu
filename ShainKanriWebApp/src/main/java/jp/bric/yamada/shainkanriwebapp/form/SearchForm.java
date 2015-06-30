@@ -42,6 +42,8 @@ public class SearchForm {
 	@Maxlength(maxlength=12, arg0 = @Arg(key = "errors.denwabangou", resource = true))
 	public String denwabangou;
 
+	public String ajaxTest;
+
 
 	public String[] deleteShainIds;
 
