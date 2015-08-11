@@ -14,6 +14,7 @@
 	</div>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src=${f:url('/js/handlebars-v3.0.3.js')}></script>
 <script>
 
 $("#button").click(function (){
