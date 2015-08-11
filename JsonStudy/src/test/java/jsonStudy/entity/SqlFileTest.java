@@ -1,4 +1,4 @@
-package jp.bric.yamada.shainkanriwebapp.entity;
+package jsonStudy.entity;
 
 import java.io.InputStream;
 import java.io.Reader;
@@ -25,7 +25,7 @@ import org.seasar.framework.util.StatementUtil;
  * </p>
  *
  */
-@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.SqlFileTestModelFactoryImpl"}, date = "2015/08/10 13:47:30")
+@Generated(value = {"S2JDBC-Gen 2.4.46", "org.seasar.extension.jdbc.gen.internal.model.SqlFileTestModelFactoryImpl"}, date = "2015/08/11 15:12:38")
 public class SqlFileTest extends S2TestCase {
 
     private JdbcManager jdbcManager;
@@ -42,12 +42,13 @@ public class SqlFileTest extends S2TestCase {
     }
 
     /**
-     * SQLファイルがひとつもありません。
-     * ダミーのテストメソッドです。
+     * SQLファイルをテストします。
      * 
      * @throws Exception
      */
-    public void test() throws Exception {
+    public void testSqlFile0Tx() throws Exception {
+        String path = "META-INF/sql/JsonStudy.sql";
+        new SqlFile(path).execute();
     }
 
     /**

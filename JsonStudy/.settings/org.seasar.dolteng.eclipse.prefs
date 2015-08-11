@@ -1,0 +1,8 @@
+DaoType=S2JDBC
+DefaultResourcePath=/JsonStudy/src/main/resources
+DefaultRootPackage=jsonStudy
+DefaultSrcPath=/JsonStudy/src/main/java
+ServletPath=/JsonStudy
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1
